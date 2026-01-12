@@ -19,13 +19,14 @@ const upload = multer({ storage })
 const items: Item[] = [
   {
     id: "1",
-    name: "Chaves com Chaveiro Colorido",
-    description: "Molho de chaves com chaveiro colorido",
+    name: "Chaves de Casa",
+    description: "Molho de chaves com chaveiro azul",
     category: "Acessórios",
     color: "prata",
     location: "Bloco A, Biblioteca",
     date: "2023-10-20",
-    image: "https://images.unsplash.com/photo-1621360841012-6809c9524225?auto=format&fit=crop&w=600&q=80", // Chaves
+    // Nova URL para Chaves (foco mais limpo)
+    image: "https://images.unsplash.com/photo-1620053916035-7c0146059e0a?w=600&auto=format&fit=crop&q=60", 
     type: "found",
     status: "registered",
     createdAt: new Date().toISOString(),
@@ -38,7 +39,8 @@ const items: Item[] = [
     color: "prata",
     location: "Bloco B, Cantina",
     date: "2023-10-19",
-    image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=600&q=80", // Garrafa Prata
+    // Nova URL para Garrafa Inox
+    image: "https://images.unsplash.com/photo-1589131493600-4739958087d1?w=600&auto=format&fit=crop&q=60",
     type: "found",
     status: "analyzing",
     createdAt: new Date().toISOString(),
@@ -46,38 +48,40 @@ const items: Item[] = [
   {
     id: "3",
     name: "Guarda-chuva Preto",
-    description: "Guarda-chuva dobrável preto",
+    description: "Guarda-chuva pequeno de fechar",
     category: "Acessórios",
     color: "preto",
     location: "Bloco C, Auditório",
     date: "2023-10-18",
-    image: "https://images.unsplash.com/photo-1517436396979-373ec3138b03?auto=format&fit=crop&w=600&q=80", // Guarda-chuva
+    // Nova URL para Guarda-chuva
+    image: "https://images.unsplash.com/photo-1520692751433-0c487378d38b?w=600&auto=format&fit=crop&q=60",
     type: "found",
     status: "registered",
     createdAt: new Date().toISOString(),
   },
   {
     id: "4",
-    name: "Caderno de Couro",
-    description: "Caderno com capa de couro marrom",
+    name: "Bolsa",
+    description: "Bolsa",
     category: "Material Escolar",
     color: "marrom",
     location: "Bloco A, Sala 101",
     date: "2023-10-17",
-    image: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80", // Caderno Marrom
+    image: "https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=600&auto=format&fit=crop&q=60",
     type: "found",
     status: "returned",
     createdAt: new Date().toISOString(),
   },
   {
     id: "5",
-    name: "Carteira de Couro Preta",
-    description: "Carteira masculina de couro preto com documentos",
+    name: "Bolsa/Carteira de Couro",
+    description: "Carteira de couro marrom escura",
     category: "Acessórios",
     color: "preto",
     location: "Bloco C, Próximo a Cantina",
     date: "2023-10-15",
-    image: "https://images.unsplash.com/photo-1627123424574-181ce5171c98?auto=format&fit=crop&w=600&q=80", // Carteira Preta
+    // Nova URL para Carteira Masculina/Unissex
+    image: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=600&auto=format&fit=crop&q=60",
     type: "found",
     status: "analyzing",
     contactName: "João Silva",
@@ -85,7 +89,6 @@ const items: Item[] = [
     createdAt: new Date().toISOString(),
   },
 ]
-
 // ============ ROTAS ============
 
 // GET /api/items - Listar todos os itens (com filtros opcionais)
