@@ -24,7 +24,7 @@ const items: Item[] = [
     category: "Utensílios",
     color: "Verde",
     location: "Bloco B, Cantina",
-    date: "2025-10-19",
+    date: "2025-10-17",
     // Nova URL para Garrafa Inox
     image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=600&q=80",
     type: "lost",
@@ -38,7 +38,7 @@ const items: Item[] = [
     category: "Material Escolar",
     color: "Branco",
     location: "Bloco A, Sala 101",
-    date: "2025-10-17",
+    date: "2025-10-19",
     image: "https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=600&auto=format&fit=crop&q=60",
     type: "found",
     status: "returned",
