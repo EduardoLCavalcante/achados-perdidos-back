@@ -24,7 +24,7 @@ const items: Item[] = [
     category: "Utensílios",
     color: "Verde",
     location: "Bloco B, Cantina",
-    date: "2025-10-17",
+    date: "2025-01-09",
     // Nova URL para Garrafa Inox
     image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=600&q=80",
     type: "lost",
@@ -38,7 +38,7 @@ const items: Item[] = [
     category: "Material Escolar",
     color: "Branco",
     location: "Bloco A, Sala 101",
-    date: "2025-10-19",
+    date: "2025-01-11",
     image: "https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=600&auto=format&fit=crop&q=60",
     type: "found",
     status: "returned",
@@ -46,7 +46,42 @@ const items: Item[] = [
   },
 
 ]
+
+function cleanupExpiredItems() {
+  const now = new Date()
+
+  const originalLength = items.length
+
+  const filteredItems = items.filter((item) => {
+    const createdAt = new Date(item.createdAt)
+    const diffInDays =
+      (now.getTime() - createdAt.getTime()) / (1000 * 60 * 60 * 24)
+
+    if (item.type === "found" && diffInDays >= 30) {
+      return false // remove
+    }
+
+    if (item.type === "lost" && diffInDays >= 60) {
+      return false // remove
+    }
+
+    return true
+  })
+
+  // Atualiza o array original (mantém referência)
+  items.length = 0
+  items.push(...filteredItems)
+
+  const removed = originalLength - items.length
+
+  if (removed > 0) {
+    console.log(`🧹 ${removed} itens expirados removidos automaticamente`)
+  }
+}
+
 // ============ ROTAS ============
+
+
 
 // GET /api/items - Listar todos os itens (com filtros opcionais)
 app.get("/api/items", (req: Request, res: Response) => {
@@ -206,27 +241,6 @@ app.patch("/api/items/:id/status", (req: Request, res: Response) => {
   })
 })
 
-// DELETE /api/items/:id - Remover item
-app.delete("/api/items/:id", (req: Request, res: Response) => {
-  const { id } = req.params
-  const itemIndex = items.findIndex((i) => i.id === id)
-
-  if (itemIndex === -1) {
-    return res.status(404).json({
-      success: false,
-      error: "Item não encontrado",
-    })
-  }
-
-  const deletedItem = items.splice(itemIndex, 1)[0]
-
-  res.json({
-    success: true,
-    data: deletedItem,
-    message: "Item removido com sucesso",
-  })
-})
-
 // POST /api/items/:id/claim - Reivindicar item
 app.post("/api/items/:id/claim", (req: Request, res: Response) => {
   const { id } = req.params
@@ -264,6 +278,9 @@ app.get("/health", (_req: Request, res: Response) => {
   res.json({ status: "ok", timestamp: new Date().toISOString() })
 })
 
+// Limpeza automática de itens expirados a cada 24 horas
+setInterval(cleanupExpiredItems, 24 * 60 * 60 * 1000)
+cleanupExpiredItems()
 // Iniciar servidor
 app.listen(PORT, () => {
   console.log(`🚀 Servidor Express rodando em http://localhost:${PORT}`)
