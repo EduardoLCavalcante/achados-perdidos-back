@@ -19,20 +19,6 @@ const upload = multer({ storage })
 const items: Item[] = [
   {
     id: "1",
-    name: "Chaves de Casa",
-    description: "Molho de chaves com chaveiro azul",
-    category: "Acessórios",
-    color: "prata",
-    location: "Bloco A, Biblioteca",
-    date: "2023-10-20",
-    // Nova URL para Chaves (foco mais limpo)
-    image: "https://images.unsplash.com/photo-1620053916035-7c0146059e0a?w=600&auto=format&fit=crop&q=60", 
-    type: "found",
-    status: "registered",
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "2",
     name: "Garrafa de Água Inox",
     description: "Garrafa térmica de aço inoxidável",
     category: "Utensílios",
@@ -41,26 +27,12 @@ const items: Item[] = [
     date: "2023-10-19",
     // Nova URL para Garrafa Inox
     image: "https://images.unsplash.com/photo-1589131493600-4739958087d1?w=600&auto=format&fit=crop&q=60",
-    type: "found",
+    type: "lost",
     status: "analyzing",
     createdAt: new Date().toISOString(),
   },
   {
-    id: "3",
-    name: "Guarda-chuva Preto",
-    description: "Guarda-chuva pequeno de fechar",
-    category: "Acessórios",
-    color: "preto",
-    location: "Bloco C, Auditório",
-    date: "2023-10-18",
-    // Nova URL para Guarda-chuva
-    image: "https://images.unsplash.com/photo-1520692751433-0c487378d38b?w=600&auto=format&fit=crop&q=60",
-    type: "found",
-    status: "registered",
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "4",
+    id: "2",
     name: "Bolsa",
     description: "Bolsa",
     category: "Material Escolar",
@@ -72,22 +44,7 @@ const items: Item[] = [
     status: "returned",
     createdAt: new Date().toISOString(),
   },
-  {
-    id: "5",
-    name: "Bolsa/Carteira de Couro",
-    description: "Carteira de couro marrom escura",
-    category: "Acessórios",
-    color: "preto",
-    location: "Bloco C, Próximo a Cantina",
-    date: "2023-10-15",
-    // Nova URL para Carteira Masculina/Unissex
-    image: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=600&auto=format&fit=crop&q=60",
-    type: "found",
-    status: "analyzing",
-    contactName: "João Silva",
-    contactEmail: "joao@email.com",
-    createdAt: new Date().toISOString(),
-  },
+
 ]
 // ============ ROTAS ============
 
