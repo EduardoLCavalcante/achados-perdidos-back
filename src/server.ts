@@ -25,7 +25,7 @@ const items: Item[] = [
     color: "prata",
     location: "Bloco A, Biblioteca",
     date: "2023-10-20",
-    image: "/keys-with-colorful-keychain.jpg",
+    image: "https://images.unsplash.com/photo-1621360841012-6809c9524225?auto=format&fit=crop&w=600&q=80", // Chaves
     type: "found",
     status: "registered",
     createdAt: new Date().toISOString(),
@@ -38,7 +38,7 @@ const items: Item[] = [
     color: "prata",
     location: "Bloco B, Cantina",
     date: "2023-10-19",
-    image: "/stainless-steel-bottle.png",
+    image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=600&q=80", // Garrafa Prata
     type: "found",
     status: "analyzing",
     createdAt: new Date().toISOString(),
@@ -51,7 +51,7 @@ const items: Item[] = [
     color: "preto",
     location: "Bloco C, Auditório",
     date: "2023-10-18",
-    image: "public/black-folding-umbrella.jpg",
+    image: "https://images.unsplash.com/photo-1517436396979-373ec3138b03?auto=format&fit=crop&w=600&q=80", // Guarda-chuva
     type: "found",
     status: "registered",
     createdAt: new Date().toISOString(),
@@ -64,7 +64,7 @@ const items: Item[] = [
     color: "marrom",
     location: "Bloco A, Sala 101",
     date: "2023-10-17",
-    image: "/leather-notebook.jpg",
+    image: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80", // Caderno Marrom
     type: "found",
     status: "returned",
     createdAt: new Date().toISOString(),
@@ -77,7 +77,7 @@ const items: Item[] = [
     color: "preto",
     location: "Bloco C, Próximo a Cantina",
     date: "2023-10-15",
-    image: "/black-leather-wallet.jpg",
+    image: "https://images.unsplash.com/photo-1627123424574-181ce5171c98?auto=format&fit=crop&w=600&q=80", // Carteira Preta
     type: "found",
     status: "analyzing",
     contactName: "João Silva",
