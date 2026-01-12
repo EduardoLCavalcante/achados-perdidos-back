@@ -29,7 +29,7 @@ const items: Item[] = [
     image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=600&q=80",
     type: "lost",
     status: "analyzing",
-    createdAt: new Date().toISOString(),
+    createdAt: new Date(Date.now() - 1 * 60 * 60 * 1000).toISOString(),
   },
   {
     id: "2",
@@ -42,7 +42,7 @@ const items: Item[] = [
     image: "https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=600&auto=format&fit=crop&q=60",
     type: "found",
     status: "returned",
-    createdAt: new Date().toISOString(),
+    createdAt: new Date(Date.now() - 5 * 60 * 60 * 1000).toISOString(),
   },
 
 ]
