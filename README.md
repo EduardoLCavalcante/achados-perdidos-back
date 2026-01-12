@@ -33,7 +33,6 @@ O servidor inicia em `http://localhost:4000`
 | POST | /api/items | Cria novo item (suporta multipart/form-data para imagem) |
 | PUT | /api/items/:id | Atualiza item |
 | PATCH | /api/items/:id/status | Atualiza apenas o status |
-| DELETE | /api/items/:id | Remove item |
 | POST | /api/items/:id/claim | Reivindica um item encontrado |
 | GET | /health | Health check |
 
